@@ -1,0 +1,23 @@
+import Tree from "./tree.js";
+import Node from "./node.js";
+
+const dataArray = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+const tree = new Tree(dataArray);
+console.log(tree.isBalanced());
+console.log("Level Order:");
+tree.levelOrder((value) => console.log(value));
+console.log("Pre Order:");
+tree.preorder((value) => console.log(value));
+console.log("In Order:");
+tree.inorder((value) => console.log(value));
+console.log("Post Order:");
+tree.postorder((value) => console.log(value));
+tree.root.right.right.left = new Node(200);
+console.log(tree.isBalanced()); 
+tree.rebalance();
+console.log(tree.isBalanced());
+tree.insert(15);
+tree.delete(7);
+console.log(tree.isBalanced());
+console.log("In Order:");
+tree.inorder((value) => console.log(value));
